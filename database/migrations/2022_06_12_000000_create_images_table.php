@@ -28,6 +28,7 @@ class CreateImagesTable extends Migration
             $table->string('focal_length')->nullable();
             $table->string('lens')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

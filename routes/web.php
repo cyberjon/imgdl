@@ -14,8 +14,9 @@ use App\Http\Controllers;
 |
 */
 
-Route::get('/', 'ImageController@index')->name('images.index');
-Route::get('upload', 'ImageController@upload')->name('images.upload');
-Route::post('upload', 'ImageController@storeUpload')->name('images.storeUpload');
-Route::get('download', 'ImageController@download')->name('images.download');
-Route::post('download', 'ImageController@storeDownload')->name('images.storeDownload');
+Route::post('show', 'ImageController@show');
+Route::get('upload', 'ImageController@upload');
+Route::post('upload', 'ImageController@storeUpload');
+Route::get('download', 'ImageController@download');
+Route::post('download', 'ImageController@storeDownload');
+Route::get('/', 'ImageController@index')->name('index');
