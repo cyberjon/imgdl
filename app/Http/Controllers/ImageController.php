@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Image;
-use Facade\FlareClient\Stacktrace\File;
 use Symfony\Component\HttpFoundation\File\File as UploadedFl;
 
 class ImageController extends Controller
@@ -17,7 +16,7 @@ class ImageController extends Controller
     {
         $images = Image::orderBy('created_at', 'desc');
         $total_images = $images->get()->count('id');
-        $images = $images->paginate(5);
+        $images = $images->paginate(10);
         return view('images.index', compact('images','total_images'));
     }
 
@@ -35,9 +34,10 @@ class ImageController extends Controller
     {
         $file = $request->file('image');
         $name = $file->getClientOriginalName();
-        $uploadedFile = new UploadedFl(public_path($this->targetDir.'/'.$name));
-        if(!file_exists($uploadedFile)){
+        $new = $this->targetDir.'/'.$name;
+        if(!file_exists(public_path($new))){
             $file->move($this->targetDir, $name);
+            $uploadedFile = new UploadedFl(public_path($new));
             $this->save($uploadedFile);
         }
         return redirect()->route('index');
@@ -89,7 +89,6 @@ class ImageController extends Controller
             $image->save();
         } catch (\Throwable $th) {
             print_r($th);
-            die();
         }
     }
 
