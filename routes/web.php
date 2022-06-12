@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'ImageController@index')->name('images.index');
+Route::get('upload', 'ImageController@upload')->name('images.upload');
+Route::post('upload', 'ImageController@storeUpload')->name('images.storeUpload');
+Route::get('download', 'ImageController@download')->name('images.download');
+Route::post('download', 'ImageController@storeDownload')->name('images.storeDownload');

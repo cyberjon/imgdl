@@ -17,9 +17,9 @@ class ImageController extends Controller
         return view('images.index', compact('images','total_images'));
     }
 
-    public function create()
+    public function download()
     {
-        return view('images.create');
+        return view('images.download');
     }
 
     public function upload()
