@@ -11,26 +11,20 @@
     <ul class="c-sidebar-nav">
         <li class="c-sidebar-nav-item">
             <a href="{{ url('/') }}" class="c-sidebar-nav-link">
-                <i class="c-sidebar-nav-icon fas fa-fw fa-tachometer-alt">
-
-                </i>
+                <i class="c-sidebar-nav-icon fas fa-fw fa-tachometer-alt"></i>
                 Images
             </a>
         </li>
         <li class="c-sidebar-nav-item">
             <a href="{{ url('/upload') }}" class="c-sidebar-nav-link">
-                <i class="c-sidebar-nav-icon fas fa-fw fa-tachometer-alt">
-
-                </i>
-                Upload
+                <i class="c-sidebar-nav-icon fas fa-fw fa-tachometer-alt"></i>
+                Upload File
             </a>
         </li>
         <li class="c-sidebar-nav-item">
             <a href="{{ url('/download') }}" class="c-sidebar-nav-link">
-                <i class="fa-fw fas fa-cogs c-sidebar-nav-icon">
-
-                </i>
-                Download
+                <i class="fa-fw fas fa-cogs c-sidebar-nav-icon"></i>
+                From URL
             </a>
         </li>
     </ul>

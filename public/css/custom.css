@@ -5,6 +5,11 @@ input {
     margin-top: 5px;
 }
 .swal2-popup {
-    width: 28em;
-    font-size: .9rem;
+    width: 25em;
+}
+.swal2-popup * {
+    font-size: 95%;
+}
+table {
+    font-size: 97%;
 }
