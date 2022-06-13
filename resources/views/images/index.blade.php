@@ -2,14 +2,14 @@
 @section('content')
     <div class="container">
         <div class="col-md-10 col-md-offset-1">
-            <span class="pull-right">Total {{ $total_images }} Images</span>
+            <span class="pull-right">Total Images: {{ $total_images }}</span>
             
             <table class="table table-striped table-condensed table-bordered table-rounded">
                     <thead>
                         <tr>
                             <th>Image</th>
-                            <th width="20%">Brand</th>
-                            <th width="20%">Camera</th>
+                            <th width="20%">Size</th>
+                            <th width="20%">Width</th>
                             <th width="25%">Details</th>
                         </tr>
                     </thead>
@@ -17,8 +17,8 @@
                     <?php for( $i = 0; $i < count( $images ); $i++ ) : ?>
                         <tr>
                             <td><img style='width: 30px; height: 30px; object-fit: cover' src="uploads/<?php echo $images[$i]['image_file']; ?>"></td>
-                            <td><?php echo $images[$i]['brand']; ?></td>
-                            <td><?php echo $images[$i]['camera']; ?></td>
+                            <td><?php echo $images[$i]['size']; ?></td>
+                            <td><?php echo $images[$i]['width']; ?></td>
                             <td><a class="show" href="#" data-id="<?php echo $images[$i]['id']; ?>">Details</a></td>
                         </tr>
                     <?php endfor; ?>
@@ -26,6 +26,8 @@
             </table>
             {{ $images->appends(request()->input())->links() }}
         </div>
+        <br />
+        <br />
     </div>
 @endsection
 @section('scripts')
@@ -44,7 +46,7 @@
                 Swal.fire({
                     title: 'Click on the image to download it',
                     html: `
-                    <a target="_blank" href="uploads/${data.image_file}"><img style="height: 282px; object-fit: cover;" src="uploads/${data.image_file}"></a>
+                    <a target="_blank" href="uploads/${data.image_file}"><img style="height: 282px;object-fit: cover;width: 100%;" src="uploads/${data.image_file}"></a>
                     <table class="table table-striped table-condensed table-bordered table-rounded">
                         <thead>
                         </thead>
