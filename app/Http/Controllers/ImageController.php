@@ -9,7 +9,6 @@ use Symfony\Component\HttpFoundation\File\File as UploadedFl;
 
 class ImageController extends Controller
 {
-
     private $targetDir = 'uploads';
     
     public function index(Request $request)
@@ -88,7 +87,7 @@ class ImageController extends Controller
             $image->lens = $lens;
             $image->save();
         } catch (\Throwable $th) {
-            print_r($th);
+            //print_r($th);
         }
     }
 
@@ -99,11 +98,4 @@ class ImageController extends Controller
         echo json_encode($image);
         die();
     }
-
-    public function destroy(Image $image)
-    {
-        $image->delete();
-        return back();
-    }
-
 }

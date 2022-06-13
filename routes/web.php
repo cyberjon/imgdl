@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,8 +14,8 @@ use App\Http\Controllers;
 */
 
 Route::post('show', 'ImageController@show');
-Route::get('upload', 'ImageController@upload');
+Route::get('upload', 'ImageController@upload')->name('upload');
 Route::post('upload', 'ImageController@storeUpload');
-Route::get('download', 'ImageController@download');
+Route::get('download', 'ImageController@download')->name('download');
 Route::post('download', 'ImageController@storeDownload');
 Route::get('/', 'ImageController@index')->name('index');

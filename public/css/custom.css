@@ -1,0 +1,10 @@
+input {
+    overflow: visible;
+    display: block;
+    width: 57%;
+    margin-top: 5px;
+}
+.swal2-popup {
+    width: 28em;
+    font-size: .9rem;
+}
