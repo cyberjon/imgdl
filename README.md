@@ -11,9 +11,17 @@
 
 `
 php artisan optimize:clear
+`
+`
 php artisan route:clear
+`
+`
 php artisan cache:clear
-php artisan config:cache  
+`
+`
+php artisan config:cache
+`
+`
 php artisan view:clear
 `
 
