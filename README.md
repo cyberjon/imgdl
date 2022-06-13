@@ -24,7 +24,7 @@ php artisan config:cache
 `
 php artisan view:clear
 `
-
+ 
 ## Upload Image
 - Select an image and click on "Upload Image" button
 
